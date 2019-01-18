@@ -1,27 +1,41 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Home from './components/Home'
+
+import Characters from './components/Characters'
+import Locations from './components/Locations'
+import Episodes from './components/Episodes'
 
 class App extends Component {
+    state = {
+      desiredContent: ''
+    }
+
+  handleButtonClick = (e) => {
+    this.setState({desiredContent:e.target.innerHTML})
+  }
+
+  Display = () => {
+    switch(this.state.desiredContent){
+      case "Characters":
+        return <Characters />;
+      case "Locations":
+        return <Locations />;
+        case "Episodes":
+          return <Episodes />;
+        default:
+          return null;
+    }
+  }
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <Home handleButtonClick={this.handleButtonClick} />
+        <h1>{this.state.desiredContent}</h1>
+        {this.Display()}
       </div>
-    );
+    )
   }
 }
 
