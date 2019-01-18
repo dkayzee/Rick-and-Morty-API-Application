@@ -3,14 +3,11 @@ import React from 'react'
 import axios from 'axios'
 
 class Characters extends React.Component {
-  constructor(){
-    super()
-    this.state = {
-      info: '',
-      characters: '',
-      init: false,
-      URL: 'https://rickandmortyapi.com/api/character/'
-    }
+  state = {
+    info: '',
+    characters: '',
+    init: false,
+    URL: 'https://rickandmortyapi.com/api/character/'
   }
 
   fetchCharacter = async (URL) => {
@@ -55,10 +52,10 @@ class Characters extends React.Component {
 
           <footer>
             <button onClick={()=>{
-              this.fetchCharacter(this.state.info.prev)
+              this.state.info.prev && this.fetchCharacter(this.state.info.prev)
             }}>Prev</button>
             <button onClick={()=>{
-              this.fetchCharacter(this.state.info.next)
+              this.state.info.next && this.fetchCharacter(this.state.info.next)
             }}>Next</button>
           </footer>
       </div>
