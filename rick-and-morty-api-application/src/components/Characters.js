@@ -32,6 +32,9 @@ class Characters extends React.Component {
           {this.state.init && this.state.characters.map(char => {
             return (
               <div className="characterContainer" key={char.id}>
+                <div className="characterImg" key={'characterImg' + char.id}>
+                  <img src={char.image} alt=""/>
+                </div>
                 <div className="characterInfo" key={'characterContainer' + char.id}>
                   <ul key={'ul' + char.id}>
                     <li key={'name' + char.id}>Name: {char.name}</li>
@@ -42,9 +45,6 @@ class Characters extends React.Component {
                     <li key={'location' + char.id}>Current Location: {char.location.name}</li>
                     <li key={'TV' + char.id}>Appearance: {char.episode.length} episodes</li>
                   </ul>
-                </div>
-                <div className="characterImg" key={'characterImg' + char.id}>
-                  <img src={char.image} alt=""/>
                 </div>
               </div>
             )
