@@ -29,6 +29,7 @@ class Characters extends React.Component {
   render(){
     return(
       <div>
+        <div className = "character">
           {this.state.init && this.state.characters.map(char => {
             return (
               <div className="characterContainer" key={char.id}>
@@ -49,15 +50,15 @@ class Characters extends React.Component {
               </div>
             )
           })}
-
-          <footer>
-            <button onClick={()=>{
-              this.state.info.prev && this.fetchCharacter(this.state.info.prev)
-            }}>Prev</button>
-            <button onClick={()=>{
-              this.state.info.next && this.fetchCharacter(this.state.info.next)
-            }}>Next</button>
-          </footer>
+        </div>
+        <footer>
+          <button onClick={()=>{
+            this.state.info.prev && this.fetchCharacter(this.state.info.prev)
+          }}>Prev</button>
+          <button onClick={()=>{
+            this.state.info.next && this.fetchCharacter(this.state.info.next)
+          }}>Next</button>
+        </footer>
       </div>
     )
   }

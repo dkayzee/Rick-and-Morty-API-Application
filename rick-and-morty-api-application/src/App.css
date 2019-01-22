@@ -1,14 +1,36 @@
-.App {
+body {
   text-align: center;
+  background-color: #12A5D1;
 }
 
 li {
   list-style: none;
 }
 
-.characterContainer{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  align-content: center;
+.character{
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0 auto;
+	justify-content: center;
 }
+
+.characterContainer{
+	background-color: #9FD5B1;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	align-content: center;
+	border: 5px black solid;
+	width: 30%;
+	margin: 5px;
+}
+
+img {
+	width: 95%;
+	margin: 5px;
+}
+
+.characterImg img {
+	border: 1px black solid;
+}
+

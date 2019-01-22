@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Home = (props) => {
+const Navigation = (props) => {
   return(
     <div>
       <button onClick={props.handleButtonClick}>Characters</button>
@@ -10,4 +10,4 @@ const Home = (props) => {
   )
 }
 
-export default Home
+export default Navigation

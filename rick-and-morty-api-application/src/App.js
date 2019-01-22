@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import Home from './components/Home'
+import Navigation from './components/Navigation'
 
 import Characters from './components/Characters'
 import Locations from './components/Locations'
@@ -31,7 +31,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Home handleButtonClick={this.handleButtonClick} />
+        <img src="https://upload.wikimedia.org/wikipedia/en/c/c8/Rick_and_Morty_logo.png" />
+        <Navigation handleButtonClick={this.handleButtonClick} />
         <h1>{this.state.desiredContent}</h1>
         {this.Display()}
       </div>
